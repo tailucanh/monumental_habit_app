@@ -1,0 +1,6 @@
+{
+      "title_dialog_location" : "Location",
+      "description_dialog_location" : "Allow maps to access your\nlocation while you use the app?",
+      "text_allow" : "Allow",
+      "text_skip" : "Skip for now"
+}
