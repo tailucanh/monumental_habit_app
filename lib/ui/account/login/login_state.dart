@@ -1,9 +1,11 @@
-import 'package:equatable/equatable.dart';
-import 'package:monumental_habit_app/services/app_helpers.dart';
 
-class HomeScreenState extends Equatable {
+import 'package:equatable/equatable.dart';
+
+import '../../../services/app_helpers.dart';
+
+class LoginState extends Equatable {
   final LoadStatus loadDataStatus;
-  const HomeScreenState({
+  const LoginState({
     this.loadDataStatus = LoadStatus.initial,
   });
 
@@ -12,9 +14,13 @@ class HomeScreenState extends Equatable {
         loadDataStatus,
       ];
 
-  HomeScreenState copyWith({LoadStatus? loadDataStatus, int? index}) {
-    return HomeScreenState(
+  LoginState copyWith({
+    LoadStatus? loadDataStatus,
+    int? index
+  }) {
+    return LoginState(
       loadDataStatus: loadDataStatus ?? this.loadDataStatus,
     );
   }
+
 }

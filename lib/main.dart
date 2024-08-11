@@ -54,8 +54,8 @@ class _MyAppState extends State<MyApp> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             appSharedPreference = snapshot.data;
-            return   MaterialApp.router(
-              title: "MonumentalApp",
+            return MaterialApp.router(
+              title: "Monumental App",
               debugShowCheckedModeBanner: false,
               theme: ThemeData(
                 primarySwatch: Colors.blue,

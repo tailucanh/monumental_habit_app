@@ -1,18 +1,32 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-
 import 'app_assets.dart';
 import 'app_colors.dart';
 import 'app_language_constants.dart';
+
+
+enum LoadStatus { loading, success, failure, initial }
+
 class AppHelpers {
 
-  static String POPPINS_FONT = "Poppins";
-  static String KEY_LIST_WEATHER_HOURLY = "LIST_WEATHER_HOURLY";
-  static String KEY_LIST_WEATHER_WEEKLY = "LIST_WEATHER_WEEKLY";
+  static const String POPPINS_FONT = "Poppins";
+  static const String KLASIK_FONT = "Klasik";
+  static const String KEY_ONBOADRING_SCREEN = "onboarding_screen";
+  static const String KEY_LOGIN_SCREEN = "login_screen";
+  static const String KEY_SIGN_UP_SCREEN ="sign_up_screen";
+  static const String KEY_FORGOT_PASSWORD_SCREEN ="forot_password_screen";
 
-  static String KEY_DETAIL_WEATHER = "detail_weather_screen";
+
+  static List<String> titleSliders(BuildContext context){
+    List<String> list = [
+      translation(context).text_slider_1.toUpperCase(),
+      translation(context).text_slider_2.toUpperCase(),
+      translation(context).text_slider_3.toUpperCase(),
+      translation(context).text_slider_4.toUpperCase()
+    ];
+    return list;
+  }
 
   static double getSizeWithDevice(BuildContext context){
     return MediaQuery.of(context).size.width;
@@ -20,6 +34,10 @@ class AppHelpers {
 
   static double getSizeHeightDevice(BuildContext context){
     return MediaQuery.of(context).size.height;
+  }
+
+  static double getHeightStatusBarDevice(BuildContext context){
+    return MediaQuery.of(context).padding.top;
   }
 
   static bool isStringNotEmpty(String input) {
@@ -52,7 +70,7 @@ class AppHelpers {
     ): const SizedBox();
   }
 
-  static popupPermission({required BuildContext context, required VoidCallback onAllow}){
+  /*static popupPermission({required BuildContext context, required VoidCallback onAllow}){
       showDialog(
           context: context,
           //barrierDismissible: false,
@@ -93,7 +111,7 @@ class AppHelpers {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         gradient: const LinearGradient(
-                          colors: [AppColors.gradient_blue_5, AppColors.gradient_purple_3],
+                          colors: [ AppColors.gradient_blue_5, AppColors.gradient_purple_3],
                         ),
                       ),
                       child: ElevatedButton(
@@ -147,6 +165,6 @@ class AppHelpers {
             );
           },
       );
-  }
+  }*/
 
 }

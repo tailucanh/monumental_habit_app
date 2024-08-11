@@ -6,7 +6,5 @@ import '../../services/app_helpers.dart';
 class HomeScreenNavigator extends AppNavigator {
   HomeScreenNavigator({required super.context});
 
-  void goToDetailWeather() {
-    context.go("/${AppHelpers.KEY_DETAIL_WEATHER}");
-  }
+
 }

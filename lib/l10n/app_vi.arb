@@ -1,7 +1,45 @@
 {
+    "text_welcome" : "Chào mừng bạn đến với những thói quen vĩ đại.",
+    "text_slider_1" : "Chào mừng bạn đến với những thói quen vĩ đại",
+    "text_slider_2" : "Tạo thói quen mới dễ dàng",
+    "text_slider_3" : "Theo dõi tiến trình của bạn",
+    "text_slider_4" : "Tham gia cộng đồng hỗ trợ",
+    "text_slider_content_1" : "Chúng tôi có thể ",
+    "text_slider_content_2" : "giúp bạn ",
+    "text_slider_content_3" : "trở thành phiên bản tốt hơn ",
+    "text_slider_content_4" : "của chính mình.",
+    "text_slider_skip" : "Bỏ qua",
+    "text_slider_next" : "Tiếp theo",
+    "text_slider_button" : "Bắt đầu ngay",
+
+
     "title_dialog_location" : "Vị trí",
     "description_dialog_location" : "Cho phép truy cập vào vị trí \ncủa bạn khi bạn sử dụng ứng dụng?",
     "text_allow" : "Chấp nhận",
-    "text_skip" : "Bỏ qua"
+    "text_skip" : "Bỏ qua",
+
+    "text_login_google" : "Tiếp tục với Google",
+    "text_login_facebook" : "Tiếp tục với Facebook",
+    "text_login_email" : "Đăng nhập bằng email",
+    "text_show_pass" : "Hiển thị",
+    "text_hint_email" : "Email",
+    "text_hint_password" : "Mật khẩu",
+    "text_login_button" : "Đăng nhập",
+    "text_forgot_password" : "Quên mật khẩu?",
+    "text_login" : "Đăng nhập",
+    "text_sign_in" : "Đăng ký",
+    "text_content_login" : "Bạn đã có tài khoản?",
+
+    "text_create_account" : "Tạo tài khoản của bạn",
+    "text_check_box_sign_in" : "Giữ tôi luôn đăng nhập",
+    "text_check_box_email" : "Gửi email cho tôi về giá đặc biệt và các thông tin khác",
+    "text_sign_up_button" : "Tạo tài khoản",
+    "text_sign_up" : "Đăng ký",
+    "text_content_sign_up" : "Chưa có tài khoản?",
+
+    "text_title_forgot_password" : "Quên mật khẩu của bạn?",
+    "text_content_forgot_password" : "Nhập email đã đăng ký của bạn bên dưới để nhận hướng dẫn đặt lại mật khẩu",
+    "text_button_forgot_password" : "Gửi liên kết đặt lại",
+    "text_content_remember_password" : "Nhớ mật khẩu?"
 
 }

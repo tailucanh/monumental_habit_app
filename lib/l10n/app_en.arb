@@ -1,6 +1,44 @@
 {
-      "title_dialog_location" : "Location",
-      "description_dialog_location" : "Allow maps to access your\nlocation while you use the app?",
-      "text_allow" : "Allow",
-      "text_skip" : "Skip for now"
+    "text_welcome" : "Welcome to monumental habits",
+    "text_slider_1" : "Welcome to monumental habits",
+    "text_slider_2" : "Create new habit easily",
+    "text_slider_3" : "Keep track of your progress",
+    "text_slider_4" : "Join a supportive community",
+    "text_slider_content_1" : "We can ",
+    "text_slider_content_2" : "help you ",
+    "text_slider_content_3" : " to be a better version of ",
+    "text_slider_content_4" : "yourself.",
+    "text_slider_skip" : "Skip",
+    "text_slider_next" : "Next",
+    "text_slider_button" : "Get Started",
+
+    "title_dialog_location" : "Location",
+    "description_dialog_location" : "Allow maps to access your\nlocation while you use the app?",
+    "text_allow" : "Allow",
+    "text_skip" : "Skip for now",
+
+    "text_login_google" : "Continue with Google",
+    "text_login_facebook" : "Continue with Facebook",
+    "text_login_email" : "Login with email",
+    "text_show_pass" : "Show",
+    "text_hint_email" : "Email",
+    "text_hint_password" : "Password",
+    "text_login_button" : "Login",
+    "text_forgot_password" : "Forgot Password?",
+    "text_login" : "Login",
+    "text_sign_in" : "Sign in",
+    "text_content_login" : "Already have an account?",
+
+    "text_create_account" : "Create your account",
+    "text_check_box_sign_in" : "Keep me signed in",
+    "text_check_box_email" : "Email me about special pricing and more",
+    "text_sign_up_button" : "Create Account",
+    "text_sign_up" : "Sign up",
+    "text_content_sign_up" : "Don’t have an account?",
+
+    "text_title_forgot_password" : "Forgot your password?",
+    "text_content_forgot_password" : "Enter your registered email below to receive password reset instruction",
+    "text_button_forgot_password" : "Send Reset Link",
+    "text_content_remember_password" : "Remember password?"
+
 }

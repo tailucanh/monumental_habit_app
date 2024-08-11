@@ -1,18 +1,33 @@
 
 class AppAssets {
   static const String iconPath = 'assets/icons/';
-  static const String imageBackground = '${iconPath}background.png';
-  static const String icHouse = '${iconPath}house.png';
-  static const String icSubtract = '${iconPath}subtract.png';
-  static const String icBottomBar = '${iconPath}bottom_bar.png';
-  static const String icPlus = '${iconPath}plus.svg';
-  static const String icMap = '${iconPath}map.svg';
+  static const String imagePath = 'assets/images/';
+
+
+  static const String imageSplash = '${imagePath}splash_screen.png';
+  static const String imageBoxForgotPass = '${imagePath}box_forgot_pass.png';
+  static const String imageCloud = '${imagePath}cloud.png';
+  static const String imageCloud2 = '${imagePath}cloud_2.png';
+  static const String imageCommunitySupport = '${imagePath}community_support.png';
+  static const String imageCreateAccount = '${imagePath}create_account.png';
+  static const String imageHabits = '${imagePath}habits.png';
+  static const String imageLine = '${imagePath}line.png';
+  static const String imageMountain = '${imagePath}mountain.png';
+  static const String imageMountain2 = '${imagePath}mountain_2.png';
+  static const String imagePasted = '${imagePath}pasted.png';
+  static const String imageProgress = '${imagePath}progress.png';
+  static const String imageTeepeeSwirly = '${imagePath}teepee_swirly.png';
+
   static const String icLocation = '${iconPath}location.png';
+  static const String icGoogle = '${iconPath}google.png';
+  static const String icFaceBook = '${iconPath}facebook.png';
 
-  static const String icMoonCloudFastWind = '${iconPath}moon_cloud_fast_wind.png';
-  static const String icMoonCloudMidRain = '${iconPath}moon_cloud_mid_rain.png';
-  static const String icSunCloudMidRain = '${iconPath}sun_cloud_mid_rain.png';
-  static const String icSunCloudAngledRain = '${iconPath}sun_cloud_angled_rain.png';
-  static const String icTornado = '${iconPath}tornado.png';
 
+
+  static List<String> imagesSlider = [
+    imagePasted,
+    imageHabits,
+    imageProgress,
+    imageCommunitySupport
+  ];
 }
