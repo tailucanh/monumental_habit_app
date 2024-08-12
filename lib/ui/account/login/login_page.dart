@@ -242,7 +242,7 @@ class _LoginChildPageState extends State<LoginChildPage> {
                                           ButtonAccountView(
                                             title: translation(context)
                                                 .text_login_button,
-                                            onPressed: () => {},
+                                            onPressed: () => context.read<LoginCubit>().openHomePage(),
                                           ),
                                           const SizedBox(
                                             height: 15,

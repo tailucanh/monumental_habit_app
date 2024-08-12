@@ -28,6 +28,8 @@ class LoginCubit extends Cubit<LoginState> {
   void openForgotPasswordPage() {
     navigator.openForgotPasswordPage();
   }
-
+  void openHomePage() {
+    navigator.openHomePage();
+  }
 
 }

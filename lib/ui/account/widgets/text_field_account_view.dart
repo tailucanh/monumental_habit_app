@@ -7,6 +7,7 @@ import 'package:monumental_habit_app/services/app_language_constants.dart';
 class TextFieldAccountView extends StatelessWidget {
   final IconData icon;
   final String? hint;
+  final Color? colorBackground;
   final bool isPassword;
   final ValueChanged<String> onChanged;
   final TextEditingController controller;
@@ -16,6 +17,7 @@ class TextFieldAccountView extends StatelessWidget {
     super.key,
     required this.icon,
     this.hint,
+    this.colorBackground,
     required this.controller,
     required this.focusNode,
     required this.isPassword,
@@ -23,7 +25,8 @@ class TextFieldAccountView extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return  TextFieldAccountViewChild(icon: icon,hint: hint, controller:controller,focusNode: focusNode, isPassword: isPassword, onChanged: onChanged,);
+    return  TextFieldAccountViewChild(icon: icon,hint: hint,colorBackground: colorBackground, controller:controller,
+      focusNode: focusNode, isPassword: isPassword, onChanged: onChanged,);
   }
 }
 
@@ -31,6 +34,7 @@ class TextFieldAccountViewChild extends StatefulWidget {
   final IconData icon;
   final String? hint;
   final bool isPassword;
+  final Color? colorBackground;
   final ValueChanged<String> onChanged;
   final TextEditingController controller;
   final FocusNode focusNode;
@@ -39,6 +43,7 @@ class TextFieldAccountViewChild extends StatefulWidget {
     super.key,
     required this.icon,
     this.hint,
+    this.colorBackground,
     required this.controller,
     required this.focusNode,
     required this.isPassword,
@@ -76,7 +81,7 @@ class _TextFieldAccountViewChildState extends State<TextFieldAccountViewChild> {
       height: 56,
       child: DecoratedBox(
         decoration: BoxDecoration(
-            color: AppColors.color_bg_text_field,
+            color: widget.colorBackground ?? AppColors.color_bg_text_field,
             borderRadius: BorderRadius.circular(12)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,

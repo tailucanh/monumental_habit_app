@@ -28,9 +28,11 @@
     "text_forgot_password" : "Quên mật khẩu?",
     "text_login" : "Đăng nhập",
     "text_sign_in" : "Đăng ký",
+    "text_content_other_sign_in" : "Hoặc đăng nhập bằng",
     "text_content_login" : "Bạn đã có tài khoản?",
 
     "text_create_account" : "Tạo tài khoản của bạn",
+    "text_hint_name" : "Tên của bạn",
     "text_check_box_sign_in" : "Giữ tôi luôn đăng nhập",
     "text_check_box_email" : "Gửi email cho tôi về giá đặc biệt và các thông tin khác",
     "text_sign_up_button" : "Tạo tài khoản",

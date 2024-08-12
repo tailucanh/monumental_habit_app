@@ -15,7 +15,8 @@ class AppHelpers {
   static const String KEY_ONBOADRING_SCREEN = "onboarding_screen";
   static const String KEY_LOGIN_SCREEN = "login_screen";
   static const String KEY_SIGN_UP_SCREEN ="sign_up_screen";
-  static const String KEY_FORGOT_PASSWORD_SCREEN ="forot_password_screen";
+  static const String KEY_FORGOT_PASSWORD_SCREEN ="forgot_password_screen";
+  static const String KEY_HOME_SCREEN ="home_screen";
 
 
   static List<String> titleSliders(BuildContext context){

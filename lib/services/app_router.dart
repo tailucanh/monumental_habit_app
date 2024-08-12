@@ -116,6 +116,28 @@ final GoRouter router = GoRouter(routes: [
       ),
     ]
   ),
+  GoRoute(
+      path: '/${AppHelpers.KEY_HOME_SCREEN}',
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return CustomTransitionPage<void>(
+          key: state.pageKey,
+          child:const HomeScreenPage(),
+          transitionDuration: const Duration(milliseconds: 200),
+          transitionsBuilder: (BuildContext context,
+              Animation<double> animation,
+              Animation<double> secondaryAnimation,
+              Widget child) {
+            return FadeTransition(
+              opacity:
+              CurveTween(curve: Curves.easeInOut).animate(animation),
+              child: child,
+            );
+          },
+        );
+      },
+      routes: [
+      ]
+  ),
 ]);
 CustomTransitionPage<void> BuildCustomTransitionPage({
   required LocalKey key,

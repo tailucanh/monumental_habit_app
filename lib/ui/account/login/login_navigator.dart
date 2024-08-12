@@ -12,5 +12,7 @@ class LoginNavigator extends AppNavigator {
   void openForgotPasswordPage() {
     context.goNamed(AppHelpers.KEY_FORGOT_PASSWORD_SCREEN);
   }
-
+  void openHomePage() {
+    context.go('/${AppHelpers.KEY_HOME_SCREEN}');
+  }
 }

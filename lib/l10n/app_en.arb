@@ -27,9 +27,11 @@
     "text_forgot_password" : "Forgot Password?",
     "text_login" : "Login",
     "text_sign_in" : "Sign in",
+    "text_content_other_sign_in" : "Or sign in with",
     "text_content_login" : "Already have an account?",
 
     "text_create_account" : "Create your account",
+    "text_hint_name" : "Your name",
     "text_check_box_sign_in" : "Keep me signed in",
     "text_check_box_email" : "Email me about special pricing and more",
     "text_sign_up_button" : "Create Account",

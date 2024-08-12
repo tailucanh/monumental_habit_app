@@ -22,5 +22,7 @@ class SignUpCubit extends Cubit<SignUpState> {
     }
   }
 
-
+  void onBackLoginPage() {
+    navigator.onBackLoginPage();
+  }
 }
