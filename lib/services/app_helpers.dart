@@ -1,6 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:monumental_habit_app/ui/main_screen/course/course_page.dart';
+import 'package:monumental_habit_app/ui/main_screen/home/home_page.dart';
+import 'package:monumental_habit_app/ui/main_screen/profile/profile_page.dart';
+import 'package:monumental_habit_app/ui/main_screen/setting/setting_page.dart';
 import 'app_assets.dart';
 import 'app_colors.dart';
 import 'app_language_constants.dart';

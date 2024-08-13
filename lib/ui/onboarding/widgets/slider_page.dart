@@ -39,7 +39,7 @@ class SliderPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 6,
+              flex: 5,
               child: Image.asset(image,
                 width: AppHelpers.getSizeWithDevice(context),
                 fit: BoxFit.contain,

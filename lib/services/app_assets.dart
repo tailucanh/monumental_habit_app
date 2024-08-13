@@ -1,4 +1,6 @@
 
+import 'package:flutter/material.dart';
+
 class AppAssets {
   static const String iconPath = 'assets/icons/';
   static const String imagePath = 'assets/images/';
@@ -19,8 +21,13 @@ class AppAssets {
   static const String imageTeepeeSwirly = '${imagePath}teepee_swirly.png';
 
   static const String icLocation = '${iconPath}location.png';
+  static const String icPlus = '${iconPath}plus.png';
   static const String icGoogle = '${iconPath}google.png';
   static const String icFaceBook = '${iconPath}facebook.png';
+  static const String icHome = '${iconPath}ic_home.png';
+  static const String icCourses = '${iconPath}ic_courses.png';
+  static const String icCommunity = '${iconPath}ic_community.png';
+  static const String icSetting = '${iconPath}ic_settings.png';
 
 
 
@@ -30,4 +37,6 @@ class AppAssets {
     imageProgress,
     imageCommunitySupport
   ];
+
+
 }

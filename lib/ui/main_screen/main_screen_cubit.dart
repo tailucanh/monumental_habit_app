@@ -2,24 +2,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 
-import 'home_screen_navigator.dart';
-import 'home_screen_state.dart';
+import 'main_screen_navigator.dart';
+import 'main_screen_state.dart';
 
-class HomeScreenCubit extends Cubit<HomeScreenState> {
-  final HomeScreenNavigator navigator;
+class MainScreenCubit extends Cubit<MainScreenState> {
+  final MainScreenNavigator navigator;
 
-  HomeScreenCubit({
+  MainScreenCubit({
     required this.navigator,
-  }) : super(HomeScreenState());
+  }) : super(const MainScreenState());
 
-  Future<void> getLocation() async {
-    try {
-
-    } on Exception {
-      return Future.error('Location services are disabled.');
-    }
+  void switchPage(int index) async {
+    emit(state.copyWith(selectedIndex: index));
   }
-
 
 
   Future<bool> getLocationUser() async {

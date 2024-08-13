@@ -126,7 +126,7 @@ class _LoginChildPageState extends State<LoginChildPage> {
                   right: 0,
                   child: SizedBox(
                     width: AppHelpers.getSizeWithDevice(context),
-                    height: AppHelpers.getSizeHeightDevice(context) / 1.5,
+                    height: AppHelpers.getSizeHeightDevice(context) / 1.25,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,

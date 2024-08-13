@@ -4,8 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:monumental_habit_app/ui/account/login/login_page.dart';
 import 'package:monumental_habit_app/ui/account/password/reset_password_page.dart';
 import 'package:monumental_habit_app/ui/account/signup/sign_up_page.dart';
+import 'package:monumental_habit_app/ui/main_screen/main_screen_page.dart';
 import 'package:monumental_habit_app/ui/onboarding/on_boarding_page.dart';
-import '../ui/home/home_screen_page.dart';
 import '../ui/onboarding/splash_screen.dart';
 import 'app_helpers.dart';
 
@@ -121,7 +121,7 @@ final GoRouter router = GoRouter(routes: [
       pageBuilder: (BuildContext context, GoRouterState state) {
         return CustomTransitionPage<void>(
           key: state.pageKey,
-          child:const HomeScreenPage(),
+          child:const MainScreenPage(),
           transitionDuration: const Duration(milliseconds: 200),
           transitionsBuilder: (BuildContext context,
               Animation<double> animation,
