@@ -10,6 +10,7 @@ import 'package:monumental_habit_app/services/app_assets.dart';
 import 'package:monumental_habit_app/services/app_colors.dart';
 import 'package:monumental_habit_app/services/app_helpers.dart';
 import 'package:monumental_habit_app/ui/main_screen/course/course_page.dart';
+import 'package:monumental_habit_app/ui/main_screen/habit/habit_page.dart';
 import 'package:monumental_habit_app/ui/main_screen/home/home_page.dart';
 import 'package:monumental_habit_app/ui/main_screen/main_screen_state.dart';
 import 'package:monumental_habit_app/ui/main_screen/profile/profile_page.dart';
@@ -48,6 +49,7 @@ class _MainScreenPageChildPageState extends State<MainScreenPageChildPage> {
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currentScreen = const HomePage();
   int _currentIndexPage = 0;
+  bool _isClickFloatingButton = false;
 
   @override
   void initState() {
@@ -62,13 +64,20 @@ class _MainScreenPageChildPageState extends State<MainScreenPageChildPage> {
       return Scaffold(
         extendBody: true,
         floatingActionButton: InkWell(
-          onTap: () {},
+          onTap: () {
+            setState(() {
+              _isClickFloatingButton = true;
+            });
+            currentScreen = const HabitPage();
+            _currentIndexPage = 2;
+            context.read<MainScreenCubit>().switchPage(_currentIndexPage);
+          },
           borderRadius: BorderRadius.circular(90),
           child: SizedBox(
             width: 64,
             height: 64,
             child: DecoratedBox(
-                decoration:const BoxDecoration(
+                decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: AppColors.color_shadow_floating_button),
                 child: Center(
@@ -76,7 +85,7 @@ class _MainScreenPageChildPageState extends State<MainScreenPageChildPage> {
                         width: 52,
                         height: 52,
                         child: DecoratedBox(
-                          decoration:const BoxDecoration(
+                          decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               color: AppColors.color_floating_button),
                           child: Center(
@@ -87,122 +96,67 @@ class _MainScreenPageChildPageState extends State<MainScreenPageChildPage> {
                               fit: BoxFit.contain,
                             ),
                           ),
-                        )
-                    )
-                )),
+                        )))),
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: BottomAppBar(
           shape: const CircularNotchedRectangle(),
           notchMargin: 10,
-          elevation: 0,
           height: 70,
           color: Colors.white,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              GestureDetector(
-                onTap: () {
-                  currentScreen = const HomePage();
-                  _currentIndexPage = 0;
-                  context.read<MainScreenCubit>().switchPage(_currentIndexPage);
-                },
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Opacity(
-                      opacity: (state.selectedIndex == 0) ? 1 : 0.4,
-                      child: Image.asset(
-                        AppAssets.icHome,
-                        width: 30,
-                        height: 30,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const Text(
-                      "Home",
-                      style: TextStyle(color: AppColors.transparent, height: 0),
-                    )
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  currentScreen = const CoursePage();
-                  _currentIndexPage = 1;
-                  context.read<MainScreenCubit>().switchPage(_currentIndexPage);
-                },
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Opacity(
-                      opacity: (state.selectedIndex == 1) ? 1 : 0.4,
-                      child: Image.asset(
-                        AppAssets.icCourses,
-                        width: 30,
-                        height: 30,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const Text(
-                      "Courses",
-                      style: TextStyle(color: AppColors.transparent, height: 0),
-                    )
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  currentScreen = const ProfilePage();
-                  _currentIndexPage = 2;
-                  context.read<MainScreenCubit>().switchPage(_currentIndexPage);
-                },
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Opacity(
-                      opacity: (state.selectedIndex == 2) ? 1 : 0.4,
-                      child: Image.asset(
-                        AppAssets.icCommunity,
-                        width: 30,
-                        height: 30,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const Text(
-                      "Community",
-                      style: TextStyle(color: AppColors.transparent, height: 0),
-                    )
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  currentScreen = const SettingPage();
-                  _currentIndexPage = 3;
-                  context.read<MainScreenCubit>().switchPage(_currentIndexPage);
-                },
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Opacity(
-                      opacity: (state.selectedIndex == 3) ? 1 : 0.4,
-                      child: Image.asset(
-                        AppAssets.icSetting,
-                        width: 30,
-                        height: 30,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const Text(
-                      "Setting",
-                      style: TextStyle(color: AppColors.transparent, height: 0),
-                    )
-                  ],
-                ),
-              )
+              _uiItemBottomAppBar(
+                  icon: AppAssets.icHome,
+                  itemIndex: 0,
+                  currentIndex: state.selectedIndex,
+                  title: "Home",
+                  callBackTap: () {
+                    currentScreen = const HomePage();
+                    _currentIndexPage = 0;
+                    context
+                        .read<MainScreenCubit>()
+                        .switchPage(_currentIndexPage);
+                  }),
+              _uiItemBottomAppBar(
+                  icon: AppAssets.icCourses,
+                  itemIndex: 1,
+                  currentIndex: state.selectedIndex,
+                  title: "Courses",
+                  callBackTap: () {
+                    currentScreen = const CoursePage();
+                    _currentIndexPage = 1;
+                    context
+                        .read<MainScreenCubit>()
+                        .switchPage(_currentIndexPage);
+                  }),
+              _uiItemBottomAppBar(
+                  icon: AppAssets.icCommunity,
+                  itemIndex: 3,
+                  currentIndex: state.selectedIndex,
+                  title: "Community",
+                  callBackTap: () {
+                    currentScreen = const ProfilePage();
+                    _currentIndexPage = 3;
+                    context
+                        .read<MainScreenCubit>()
+                        .switchPage(_currentIndexPage);
+                  }),
+              _uiItemBottomAppBar(
+                  icon: AppAssets.icSetting,
+                  itemIndex: 4,
+                  currentIndex: state.selectedIndex,
+                  title: "Setting",
+                  callBackTap: () {
+                    currentScreen = const SettingPage();
+                    _currentIndexPage = 4;
+                    context
+                        .read<MainScreenCubit>()
+                        .switchPage(_currentIndexPage);
+                  }),
             ],
           ),
         ),
@@ -212,5 +166,55 @@ class _MainScreenPageChildPageState extends State<MainScreenPageChildPage> {
         ),
       );
     });
+  }
+
+  Widget _uiItemBottomAppBar(
+      {required String icon,
+      required int itemIndex,
+      required int currentIndex,
+      required String title,
+      required VoidCallback callBackTap}) {
+
+    CrossAxisAlignment alignment;
+    switch(itemIndex){
+      case 0:
+      case 4:
+        alignment = CrossAxisAlignment.center;
+        break;
+      case 1:
+        alignment = CrossAxisAlignment.start;
+        break;
+      case 3:
+        alignment = CrossAxisAlignment.end;
+        break;
+      default:
+        alignment = CrossAxisAlignment.center;
+    }
+    return GestureDetector(
+      onTap: (){
+        setState(() {
+          _isClickFloatingButton = false;
+        });
+        callBackTap();
+      },
+      child: Column(
+        crossAxisAlignment: alignment,
+        children: [
+          Opacity(
+            opacity: (_isClickFloatingButton && itemIndex == 0) ? 1 : (currentIndex == itemIndex) ? 1 : 0.4,
+            child: Image.asset(
+              icon,
+              width: 30,
+              height: 30,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Text(
+            title,
+            style: const TextStyle(color: AppColors.transparent, height: 0),
+          )
+        ],
+      ),
+    );
   }
 }

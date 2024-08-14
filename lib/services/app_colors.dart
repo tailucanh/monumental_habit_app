@@ -22,6 +22,7 @@ class AppColors{
   static const Color color_floating_button= Color.fromRGBO(252, 157, 69, 1);
   static const Color color_shadow_floating_button = Color.fromRGBO(
       255, 209, 165, 1.0);
+  static const Color purple_shadow =  Color.fromRGBO(87, 51, 83, 0.2);
 
   static const Color gradient_home_transparent = Color.fromRGBO(255, 243, 233, 0);
   static const Color gradient_home = Color.fromRGBO(255, 243, 233, 1);

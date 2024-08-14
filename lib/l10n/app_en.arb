@@ -41,6 +41,31 @@
     "text_title_forgot_password" : "Forgot your password?",
     "text_content_forgot_password" : "Enter your registered email below to receive password reset instruction",
     "text_button_forgot_password" : "Send Reset Link",
-    "text_content_remember_password" : "Remember password?"
+    "text_content_remember_password" : "Remember password?",
+
+    "text_quote_1" : "We first make our habits, and then our habits makes us.",
+    "text_author_quote_1" : "ANONYMOUS",
+    "text_quote_2" : "ullamco laboris nisi ut aliquip ex ea commodo consequat dolore",
+
+    "text_home_page" : "Homepage",
+    "text_habits" : "HABITS",
+    "text_habit_read_book" : "Read A Book",
+    "text_habit_exercise" : "Exercise",
+    "text_habit_wake_up" : "Wake Up Early",
+    "text_habit_walk_dog" : "Walk Dog",
+
+    "text_new_habit" : "New Habit",
+    "text_hint_habit" : "Enter habit name",
+    "text_habit_frequency" : "Habit Frequency",
+    "text_habit_custom" : "Custom",
+    "text_reminder" : "Reminder",
+    "text_notification" : "Notification",
+    "text_on" : "On",
+    "text_off" : "Off",
+    "text_title_habit_banner" : "Start this habit",
+    "text_content_habit_banner" : "Start this habit"
+
+
+
 
 }

@@ -28,6 +28,7 @@ class AppAssets {
   static const String icCourses = '${iconPath}ic_courses.png';
   static const String icCommunity = '${iconPath}ic_community.png';
   static const String icSetting = '${iconPath}ic_settings.png';
+  static const String icArrowBanner = '${iconPath}arrow_banner.png';
 
 
 

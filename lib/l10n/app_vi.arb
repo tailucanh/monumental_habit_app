@@ -42,6 +42,28 @@
     "text_title_forgot_password" : "Quên mật khẩu của bạn?",
     "text_content_forgot_password" : "Nhập email đã đăng ký của bạn bên dưới để nhận hướng dẫn đặt lại mật khẩu",
     "text_button_forgot_password" : "Gửi liên kết đặt lại",
-    "text_content_remember_password" : "Nhớ mật khẩu?"
+    "text_content_remember_password" : "Nhớ mật khẩu?",
+
+    "text_quote_1" : "Chúng ta tạo ra thói quen, và sau đó thói quen tạo ra chúng ta.",
+    "text_author_quote_1" : "ANONYMOUS",
+    "text_quote_2" : "không có lao động ngoại trừ một số trong đó có thể được hưởng lợi từ sự đau đớn.",
+
+    "text_home_page" : "Trang chủ",
+    "text_habits" : "THÓI QUEN",
+    "text_habit_read_book" : "Đọc sách",
+    "text_habit_exercise" : "Tập thể dục",
+    "text_habit_wake_up" : "Dậy sớm",
+    "text_habit_walk_dog" : "Dắt chó đi dạo",
+
+    "text_new_habit" : "Thói quen mới",
+    "text_hint_habit" : "Nhập tên thói quen",
+    "text_habit_frequency" : "Tần suất thói quen",
+    "text_habit_custom" : "Tùy chỉnh",
+    "text_reminder" : "Nhắc nhở",
+    "text_notification" : "Thông báo",
+    "text_on" : "Bật",
+    "text_off" : "Tắt",
+    "text_title_habit_banner" : "Bắt đầu thói quen này",
+    "text_content_habit_banner" : "Bắt đầu thói quen này"
 
 }
