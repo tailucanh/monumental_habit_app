@@ -19,6 +19,7 @@ class AppAssets {
   static const String imagePasted = '${imagePath}pasted.png';
   static const String imageProgress = '${imagePath}progress.png';
   static const String imageTeepeeSwirly = '${imagePath}teepee_swirly.png';
+  static const String imageBannerCourse = '${imagePath}banner_course.png';
 
   static const String icLocation = '${iconPath}location.png';
   static const String icPlus = '${iconPath}plus.png';

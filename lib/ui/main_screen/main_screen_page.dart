@@ -9,11 +9,11 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:monumental_habit_app/services/app_assets.dart';
 import 'package:monumental_habit_app/services/app_colors.dart';
 import 'package:monumental_habit_app/services/app_helpers.dart';
+import 'package:monumental_habit_app/ui/main_screen/community/community_page.dart';
 import 'package:monumental_habit_app/ui/main_screen/course/course_page.dart';
 import 'package:monumental_habit_app/ui/main_screen/habit/habit_page.dart';
 import 'package:monumental_habit_app/ui/main_screen/home/home_page.dart';
 import 'package:monumental_habit_app/ui/main_screen/main_screen_state.dart';
-import 'package:monumental_habit_app/ui/main_screen/profile/profile_page.dart';
 import 'package:monumental_habit_app/ui/main_screen/setting/setting_page.dart';
 import 'main_screen_cubit.dart';
 import 'main_screen_navigator.dart';
@@ -63,6 +63,7 @@ class _MainScreenPageChildPageState extends State<MainScreenPageChildPage> {
         builder: (context, state) {
       return Scaffold(
         extendBody: true,
+        backgroundColor: AppColors.gradient_home,
         floatingActionButton: InkWell(
           onTap: () {
             setState(() {
@@ -139,7 +140,7 @@ class _MainScreenPageChildPageState extends State<MainScreenPageChildPage> {
                   currentIndex: state.selectedIndex,
                   title: "Community",
                   callBackTap: () {
-                    currentScreen = const ProfilePage();
+                    currentScreen = const CommunityPage();
                     _currentIndexPage = 3;
                     context
                         .read<MainScreenCubit>()
@@ -160,9 +161,77 @@ class _MainScreenPageChildPageState extends State<MainScreenPageChildPage> {
             ],
           ),
         ),
-        body: PageStorage(
-          bucket: bucket,
-          child: currentScreen,
+        body: Stack(
+          children: [
+            // Background
+            (state.selectedIndex == 0 || state.selectedIndex == 1 || state.selectedIndex == 2) ? Stack(
+              children: [
+                Positioned(
+                    top: AppHelpers.getSizeHeightDevice(context) / 2.5,
+                    right: -40,
+                    child: Image.asset(
+                      AppAssets.imageCloud,
+                      width: 167,
+                      height: 76,
+                      fit: BoxFit.contain,
+                    )),
+                Positioned(
+                    top: AppHelpers.getSizeHeightDevice(context) / 2.3,
+                    left: -15,
+                    child: Image.asset(
+                      AppAssets.imageCloud2,
+                      width: 117,
+                      height: 58,
+                      fit: BoxFit.contain,
+                    )),
+                Positioned(
+                    top: AppHelpers.getSizeHeightDevice(context) / 1.5,
+                    right: 25,
+                    child: Image.asset(
+                      AppAssets.imageCloud2,
+                      width: 68,
+                      height: 35,
+                      fit: BoxFit.contain,
+                    )),
+                Positioned(
+                    bottom: -12,
+                    left: -25,
+                    right: -15,
+                    child: Image.asset(
+                      AppAssets.imageMountain2,
+                      width: AppHelpers.getSizeWithDevice(context) + 70,
+                      height: 200,
+                      fit: BoxFit.contain,
+                    )),
+                Positioned(
+                    bottom: -12,
+                    left: -25,
+                    right: -15,
+                    child: Image.asset(
+                      AppAssets.imageMountain,
+                      width: AppHelpers.getSizeWithDevice(context) + 70,
+                      height: 200,
+                      fit: BoxFit.contain,
+                    )),
+                Positioned(
+                    bottom: -30,
+                    left: 20,
+                    right: 0,
+                    child: Image.asset(
+                      AppAssets.imageLine,
+                      width: AppHelpers.getSizeWithDevice(context),
+                      height: 150,
+                      fit: BoxFit.contain,
+                    )),
+
+              ],
+            ) : const SizedBox(),
+
+            PageStorage(
+              bucket: bucket,
+              child: currentScreen,
+            ),
+          ],
         ),
       );
     });

@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:monumental_habit_app/services/app_helpers.dart';
 
-class ProfilePageState extends Equatable {
+class CommunityPageState extends Equatable {
   final LoadStatus loadDataStatus;
 
 
-  const ProfilePageState({
+  const CommunityPageState({
     this.loadDataStatus = LoadStatus.initial,
   });
 
@@ -14,8 +14,8 @@ class ProfilePageState extends Equatable {
         loadDataStatus,
       ];
 
-  ProfilePageState copyWith({LoadStatus? loadDataStatus,}) {
-    return ProfilePageState(
+  CommunityPageState copyWith({LoadStatus? loadDataStatus,}) {
+    return CommunityPageState(
       loadDataStatus: loadDataStatus ?? this.loadDataStatus,
     );
   }

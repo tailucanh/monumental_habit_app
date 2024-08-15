@@ -144,7 +144,8 @@ class _TextFieldAccountViewChildState extends State<TextFieldAccountViewChild> {
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                       fontFamily: AppHelpers.POPPINS_FONT),
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 8),
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 10),
+                  border: InputBorder.none,
                   enabledBorder: const UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.white, width: 0),
                   ),

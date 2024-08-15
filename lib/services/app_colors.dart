@@ -29,7 +29,7 @@ class AppColors{
 
   static const Color color_bg_text_field = Color.fromRGBO(255, 246, 237, 1);
   static const Color color_text_field = Color.fromRGBO(253, 167, 88, 1);
-  static const Color color_text_field_hint = Color.fromRGBO(87, 51, 83, 1);
+  static const Color color_text_field_hint = Color.fromRGBO(87, 51, 83, 0.4);
 
 
 

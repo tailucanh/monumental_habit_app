@@ -51,6 +51,8 @@ dependencies:
   equatable: ^2.0.5
   font_awesome_flutter: ^10.7.0
   carousel_slider: ^5.0.0
+  auto_size_text: ^3.0.0
+  flutter_switch: ^0.3.2
 
 dev_dependencies:
   flutter_test:
