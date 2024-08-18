@@ -8,12 +8,14 @@ import 'package:flutter_switch/flutter_switch.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:monumental_habit_app/models/habit_frequency.dart';
 import 'package:monumental_habit_app/services/app_assets.dart';
 import 'package:monumental_habit_app/services/app_colors.dart';
 import 'package:monumental_habit_app/services/app_helpers.dart';
 import 'package:monumental_habit_app/ui/main_screen/habit/habit_page_cubit.dart';
 import 'package:monumental_habit_app/ui/main_screen/habit/habit_page_navigator.dart';
 import 'package:monumental_habit_app/ui/main_screen/habit/habit_page_state.dart';
+import 'package:monumental_habit_app/ui/main_screen/habit/widgets/habit_frequency_item.dart';
 
 import '../../../services/app_language_constants.dart';
 
@@ -80,12 +82,10 @@ class _HabitPageChildPageState extends State<HabitPageChildPage> {
                     const SizedBox(
                       height: 20,
                     ),
-                    _uiAddHabit()
+                    _uiAddHabit(context.read<HabitPageCubit>().dataHabits())
                   ],
                 ),
               ),
-
-
               Positioned(
                   bottom: 120,
                   left: 0,
@@ -144,7 +144,7 @@ class _HabitPageChildPageState extends State<HabitPageChildPage> {
     );
   }
 
-  Widget _uiAddHabit() {
+  Widget _uiAddHabit(List<HabitFrequency> listData) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -303,6 +303,30 @@ class _HabitPageChildPageState extends State<HabitPageChildPage> {
                           ],
                         ),
                       )
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 10,),
+                const Divider(height: 1, color: AppColors.gradient_home),
+                SizedBox(
+                  height: 80,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                          child: ListView.builder(
+                            key:const Key(AppHelpers.KEY_LIST_HABIT_FREQUENCY),
+                            shrinkWrap: true,
+                            itemCount: listData.length,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index){
+                              return HabitFrequencyItem(
+                                data: listData[index],
+                              );
+                            },
+
+                          )
+                      ),
                     ],
                   ),
                 ),

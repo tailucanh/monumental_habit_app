@@ -17,6 +17,8 @@ class AppHelpers {
   static const String KEY_FORGOT_PASSWORD_SCREEN ="forgot_password_screen";
   static const String KEY_HOME_SCREEN ="home_screen";
 
+  static const String KEY_LIST_HABIT_FREQUENCY ="list_habit_frequency";
+
 
   static List<String> titleSliders(BuildContext context){
     List<String> list = [
