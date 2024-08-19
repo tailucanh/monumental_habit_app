@@ -15,6 +15,7 @@ import 'package:monumental_habit_app/services/countdown_timer.dart';
 import 'package:monumental_habit_app/ui/main_screen/setting/subscription/subscription_page_cubit.dart';
 import 'package:monumental_habit_app/ui/main_screen/setting/subscription/subscription_page_navigator.dart';
 import 'package:monumental_habit_app/ui/main_screen/setting/subscription/subscription_page_state.dart';
+import 'package:monumental_habit_app/ui/main_screen/setting/subscription/widgets/item_purchase_package.dart';
 
 import 'package:monumental_habit_app/ui/main_screen/setting/widget/item_setting.dart';
 
@@ -98,26 +99,62 @@ class _SubscriptionPageChildPageState extends State<SubscriptionPageChildPage> {
                 _uiAppBar(
                     onTapBack: () =>
                         context.read<SubscriptionPageCubit>().onBackPage()),
-                const SizedBox(
-                  height: 30,
-                ),
+
                 Expanded(
                   child: SingleChildScrollView(
+                    padding:const EdgeInsets.only(top: 30, bottom: 50),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                       /* _uiBannerSetting(
+
+                         _uiBannerSetting(
                             percent: 60,
                             timeHours: _timeHours,
                             timeMinutes: _timeMinutes,
-                            timeSeconds: _timeSeconds),*/
+                            timeSeconds: _timeSeconds),
                         const SizedBox(
                           height: 10,
                         ),
                         _uiUnlock(),
 
-
+                        // ui list purchase
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                                flex: 1,
+                                child: ItemPurchasePackage(
+                                  data: context
+                                      .read<SubscriptionPageCubit>()
+                                      .dataPurchase(context)[0],
+                                  onPressed: () {},
+                                )),
+                            const SizedBox(width: 8,),
+                            Expanded(
+                                flex: 1,
+                                child: ItemPurchasePackage(
+                                  data: context
+                                      .read<SubscriptionPageCubit>()
+                                      .dataPurchase(context)[1],
+                                  onPressed: () {},
+                                )),
+                            const SizedBox(width: 8,),
+                            Expanded(
+                                flex: 1,
+                                child: ItemPurchasePackage(
+                                  data: context
+                                      .read<SubscriptionPageCubit>()
+                                      .dataPurchase(context)[2],
+                                  onPressed: () {},
+                                ))
+                          ],
+                        ),
+                        // UI footer bar
                         const SizedBox(
                           height: 35,
                         ),
@@ -134,7 +171,8 @@ class _SubscriptionPageChildPageState extends State<SubscriptionPageChildPage> {
                               ),
                               child: Center(
                                 child: Text(
-                                  translation(context).text_premium_subscribe_button,
+                                  translation(context)
+                                      .text_premium_subscribe_button,
                                   textAlign: TextAlign.center,
                                   maxLines: 1,
                                   style: const TextStyle(
@@ -156,10 +194,12 @@ class _SubscriptionPageChildPageState extends State<SubscriptionPageChildPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                             const FaIcon(Icons.security_rounded, color: AppColors.text_purple, size: 25),
+                              const FaIcon(Icons.security_rounded,
+                                  color: AppColors.text_purple, size: 25),
                               Expanded(
                                 child: Text(
-                                  translation(context).text_premium_content_secured,
+                                  translation(context)
+                                      .text_premium_content_secured,
                                   textAlign: TextAlign.center,
                                   maxLines: 2,
                                   style: const TextStyle(
@@ -179,21 +219,20 @@ class _SubscriptionPageChildPageState extends State<SubscriptionPageChildPage> {
                           onTap: () {},
                           borderRadius: BorderRadius.circular(5),
                           child: Text(
-                            translation(context)
-                                .text_premium_purchase,
+                            translation(context).text_premium_purchase,
                             textAlign: TextAlign.center,
                             style: const TextStyle(
                                 color: AppColors.color_text_field,
-                                decoration:
-                                TextDecoration.underline,
+                                decoration: TextDecoration.underline,
                                 decorationColor: AppColors.color_text_field,
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                                fontFamily:
-                                AppHelpers.POPPINS_FONT),
+                                fontFamily: AppHelpers.POPPINS_FONT),
                           ),
                         ),
-                        const SizedBox(height: 8,),
+                        const SizedBox(
+                          height: 8,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -202,54 +241,48 @@ class _SubscriptionPageChildPageState extends State<SubscriptionPageChildPage> {
                               onTap: () {},
                               borderRadius: BorderRadius.circular(5),
                               child: Text(
-                                translation(context)
-                                    .text_premium_service,
+                                translation(context).text_premium_service,
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
                                     color: AppColors.text_purple,
-                                    decoration:
-                                    TextDecoration.underline,
+                                    decoration: TextDecoration.underline,
                                     decorationColor: AppColors.text_purple,
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
-                                    fontFamily:
-                                    AppHelpers.POPPINS_FONT),
+                                    fontFamily: AppHelpers.POPPINS_FONT),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 5.0),
                               child: Text(
-                                translation(context)
-                                    .text_premium_and,
+                                translation(context).text_premium_and,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     color: AppColors.text_purple.withAlpha(60),
                                     fontSize: 14,
                                     fontWeight: FontWeight.w500,
-                                    fontFamily:
-                                    AppHelpers.POPPINS_FONT),
+                                    fontFamily: AppHelpers.POPPINS_FONT),
                               ),
                             ),
                             InkWell(
                               onTap: () {},
                               borderRadius: BorderRadius.circular(5),
                               child: Text(
-                                translation(context)
-                                    .text_premium_privacy,
+                                translation(context).text_premium_privacy,
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
                                     color: AppColors.text_purple,
-                                    decoration:
-                                    TextDecoration.underline,
+                                    decoration: TextDecoration.underline,
                                     decorationColor: AppColors.text_purple,
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
-                                    fontFamily:
-                                    AppHelpers.POPPINS_FONT),
+                                    fontFamily: AppHelpers.POPPINS_FONT),
                               ),
                             ),
                           ],
-                        )
+                        ),
+
                       ],
                     ),
                   ),
@@ -333,7 +366,7 @@ class _SubscriptionPageChildPageState extends State<SubscriptionPageChildPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   AutoSizeText(
-                    "${percent.toString()} ${translation(context).text_title_premium_banner}",
+                    "${percent.toString()}% ${translation(context).text_title_premium_banner}",
                     textAlign: TextAlign.start,
                     minFontSize: 10,
                     stepGranularity: 1.0,

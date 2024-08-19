@@ -62,7 +62,7 @@ class HabitFrequencyItem extends StatelessWidget {
                           size: const Size(38, 38),
                           painter: RoundedTrianglePainter(
                               color: AppColors.color_floating_button,
-                              radius: 12),
+                              radius: 12, rotate: false),
                         ),
                 ),
               ),
