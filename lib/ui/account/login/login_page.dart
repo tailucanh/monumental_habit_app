@@ -259,6 +259,7 @@ class _LoginChildPageState extends State<LoginChildPage> {
                                                   color: AppColors.text_purple,
                                                   decoration:
                                                       TextDecoration.underline,
+                                                  decorationColor: AppColors.text_purple,
                                                   fontSize: 14,
                                                   fontStyle: FontStyle.normal,
                                                   fontFamily:

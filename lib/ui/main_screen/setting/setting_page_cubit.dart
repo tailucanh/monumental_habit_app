@@ -11,4 +11,12 @@ class SettingPageCubit extends Cubit<SettingPageState> {
     required this.navigator,
   }) : super(const SettingPageState());
 
+
+  void openProfilePage() {
+    navigator.openProfilePage();
+  }
+  void openSubscriptionPage() {
+    navigator.openSubscriptionPage();
+  }
+
 }

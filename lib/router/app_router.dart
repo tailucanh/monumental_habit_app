@@ -5,9 +5,11 @@ import 'package:monumental_habit_app/ui/account/login/login_page.dart';
 import 'package:monumental_habit_app/ui/account/password/reset_password_page.dart';
 import 'package:monumental_habit_app/ui/account/signup/sign_up_page.dart';
 import 'package:monumental_habit_app/ui/main_screen/main_screen_page.dart';
+import 'package:monumental_habit_app/ui/main_screen/profile/profile_page.dart';
+import 'package:monumental_habit_app/ui/main_screen/setting/subscription/subscription_page.dart';
 import 'package:monumental_habit_app/ui/onboarding/on_boarding_page.dart';
 import '../ui/onboarding/splash_screen.dart';
-import 'app_helpers.dart';
+import '../services/app_helpers.dart';
 
 
 final GoRouter router = GoRouter(routes: [
@@ -136,6 +138,48 @@ final GoRouter router = GoRouter(routes: [
         );
       },
       routes: [
+        GoRoute(
+          path: AppHelpers.KEY_PROFILE_SCREEN,
+          name: AppHelpers.KEY_PROFILE_SCREEN,
+          pageBuilder: (BuildContext context, GoRouterState state) {
+            return CustomTransitionPage<void>(
+              key: state.pageKey,
+              child:const ProfilePage(),
+              transitionDuration: const Duration(milliseconds: 200),
+              transitionsBuilder: (BuildContext context,
+                  Animation<double> animation,
+                  Animation<double> secondaryAnimation,
+                  Widget child) {
+                return FadeTransition(
+                  opacity:
+                  CurveTween(curve: Curves.easeInOut).animate(animation),
+                  child: child,
+                );
+              },
+            );
+          },
+        ),
+        GoRoute(
+          path: AppHelpers.KEY_SUBSCRIPTION_SCREEN,
+          name: AppHelpers.KEY_SUBSCRIPTION_SCREEN,
+          pageBuilder: (BuildContext context, GoRouterState state) {
+            return CustomTransitionPage<void>(
+              key: state.pageKey,
+              child:const SubscriptionPage(),
+              transitionDuration: const Duration(milliseconds: 200),
+              transitionsBuilder: (BuildContext context,
+                  Animation<double> animation,
+                  Animation<double> secondaryAnimation,
+                  Widget child) {
+                return FadeTransition(
+                  opacity:
+                  CurveTween(curve: Curves.easeInOut).animate(animation),
+                  child: child,
+                );
+              },
+            );
+          },
+        ),
       ]
   ),
 ]);

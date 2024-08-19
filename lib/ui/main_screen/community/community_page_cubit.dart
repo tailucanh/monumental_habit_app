@@ -11,4 +11,9 @@ class CommunityPageCubit extends Cubit<CommunityPageState> {
     required this.navigator,
   }) : super(const CommunityPageState());
 
+
+  void openProfilePage() {
+    navigator.openProfilePage();
+  }
+
 }

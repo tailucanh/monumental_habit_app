@@ -16,6 +16,9 @@ class AppHelpers {
   static const String KEY_SIGN_UP_SCREEN ="sign_up_screen";
   static const String KEY_FORGOT_PASSWORD_SCREEN ="forgot_password_screen";
   static const String KEY_HOME_SCREEN ="home_screen";
+  static const String KEY_PROFILE_SCREEN ="profile_screen";
+  static const String KEY_SUBSCRIPTION_SCREEN ="subscription_screen";
+
 
   static const String KEY_LIST_HABIT_FREQUENCY ="list_habit_frequency";
 

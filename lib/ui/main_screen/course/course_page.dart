@@ -120,10 +120,21 @@ class _CoursePageChildPageState extends State<CoursePageChildPage> {
                                         fontFamily: AppHelpers.POPPINS_FONT),
                                   ),
                                 ),
-                                const FaIcon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  size: 20,
-                                  color: AppColors.text_purple,
+                                DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: AppColors.text_purple.withAlpha(50),
+                                        spreadRadius: -5,
+                                        blurRadius: 5,
+                                      ),
+                                    ],
+                                  ),
+                                  child: const FaIcon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    size: 20,
+                                    color: AppColors.text_purple,
+                                  ),
                                 )
                               ],
                             ),
@@ -159,10 +170,21 @@ class _CoursePageChildPageState extends State<CoursePageChildPage> {
                                         fontFamily: AppHelpers.POPPINS_FONT),
                                   ),
                                 ),
-                                const FaIcon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  size: 20,
-                                  color: AppColors.color_text_field,
+                                DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: AppColors.color_text_field.withAlpha(50),
+                                        spreadRadius: -5,
+                                        blurRadius: 5,
+                                      ),
+                                    ],
+                                  ),
+                                  child: const FaIcon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    size: 20,
+                                    color: AppColors.color_text_field,
+                                  ),
                                 )
                               ],
                             ),

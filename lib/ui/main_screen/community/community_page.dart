@@ -65,14 +65,14 @@ class _CommunityPageChildPageState extends State<CommunityPageChildPage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              _uiAppBar(),
+              _uiAppBar(onTapProfile: () => context.read<CommunityPageCubit>().openProfilePage()),
             ],
           ),
         ),
       );
     });
   }
-  Widget _uiAppBar() {
+  Widget _uiAppBar({required GestureTapCallback onTapProfile}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -133,7 +133,7 @@ class _CommunityPageChildPageState extends State<CommunityPageChildPage> {
           ),
         ),
         InkWell(
-          onTap: () {},
+          onTap: onTapProfile,
           child: SizedBox(
             width: 44,
             height: 44,

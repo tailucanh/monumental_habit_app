@@ -87,6 +87,7 @@
     "text_profile_total_work" : "Tổng số giờ làm việc",
     "text_profile_task_completed" : "Công việc đã hoàn thành",
     "text_profile_billing" : "Phương thức thanh toán",
+    "text_profile_longest_days" : "Ngày",
     "text_profile_longest_streak" : "Chuỗi dài nhất",
 
     "text_setting" : "Cài đặt",

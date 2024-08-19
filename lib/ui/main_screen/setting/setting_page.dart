@@ -77,11 +77,11 @@ class _SettingPageChildPageState extends State<SettingPageChildPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         _uiBannerSetting(
-                            email: "lucanhtai1504@gmail.com", onTap: () {}),
+                            email: "lucanhtai1504@gmail.com", onTap: () => context.read<SettingPageCubit>().openProfilePage()),
                         const SizedBox(
                           height: 15,
                         ),
-                        _uiGeneral(),
+                        _uiGeneral(onTapNotification: () {}, onTapMore: () => context.read<SettingPageCubit>().openSubscriptionPage()),
                         const SizedBox(
                           height: 15,
                         ),
@@ -258,7 +258,7 @@ class _SettingPageChildPageState extends State<SettingPageChildPage> {
     );
   }
 
-  Widget _uiGeneral() {
+  Widget _uiGeneral({required VoidCallback onTapNotification, required VoidCallback onTapMore}) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -280,7 +280,7 @@ class _SettingPageChildPageState extends State<SettingPageChildPage> {
           title: translation(context).text_setting_notification,
           icon: Icons.notifications_active_rounded,
           content: translation(context).text_setting_content_notification,
-          onPressed: () {},
+          onPressed: onTapNotification,
         ),
         const SizedBox(
           height: 10,
@@ -289,7 +289,7 @@ class _SettingPageChildPageState extends State<SettingPageChildPage> {
           title: translation(context).text_setting_more,
           icon: Icons.more_horiz_rounded,
           content: translation(context).text_setting_content_more,
-          onPressed: () {},
+          onPressed: onTapMore,
         ),
       ],
     );

@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'services/app_language_constants.dart';
-import 'services/app_router.dart';
+import 'router/app_router.dart';
 import 'services/app_shared_preference.dart';
 
 void main() {

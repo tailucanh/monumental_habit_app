@@ -11,4 +11,8 @@ class HomePageCubit extends Cubit<HomePageState> {
     required this.navigator,
   }) : super(const HomePageState());
 
+  void openProfilePage() {
+    navigator.openProfilePage();
+  }
+
 }

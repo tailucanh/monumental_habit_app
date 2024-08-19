@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:ui';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -57,7 +58,7 @@ class _HomePageChildPageState extends State<HomePageChildPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
-            _uiAppBar(),
+            _uiAppBar(onTapProfile: () => context.read<HomePageCubit>().openProfilePage()),
             _uiBoxQuote(
                 quote: translation(context).text_quote_1,
                 author: translation(context).text_author_quote_1)
@@ -67,7 +68,7 @@ class _HomePageChildPageState extends State<HomePageChildPage> {
     });
   }
 
-  Widget _uiAppBar() {
+  Widget _uiAppBar({required GestureTapCallback onTapProfile}) {
     return Padding(
       padding: EdgeInsets.only(
           top: AppHelpers.getHeightStatusBarDevice(context) + 25,
@@ -134,7 +135,7 @@ class _HomePageChildPageState extends State<HomePageChildPage> {
             ),
           ),
           InkWell(
-            onTap: () {},
+            onTap: onTapProfile,
             child: SizedBox(
               width: 44,
               height: 44,

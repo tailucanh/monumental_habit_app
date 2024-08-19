@@ -86,6 +86,7 @@
     "text_profile_total_work" : "Total Work Hours",
     "text_profile_task_completed" : "Task Completed",
     "text_profile_billing" : "Billing methods",
+    "text_profile_longest_days" : "Days",
     "text_profile_longest_streak" : "Longest Streak",
 
     "text_setting" : "Settings",
